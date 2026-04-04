@@ -45,8 +45,7 @@ I'm a passionate Web & App Developer who loves building fast, interactive, and v
 
 ## 📫 Contact Me
 - **Email:** arifline16@gmail.com
-- **GitHub:** https://github.com/arifh97
-- **Portfolio:** [Portfolio](https://devaithemes.com/)
+- **Portfolio:** [Portfolio](https://devai-portfolio.vercel.app/)
 
 ---
 
