@@ -105,7 +105,7 @@ const ContactSection = () => {
               <label className="text-sm font-medium mb-2 block text-foreground">Name</label>
               <input
                 type="text"
-                name="from_name"              // ← must match your EmailJS template variable
+                name="name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
@@ -117,7 +117,7 @@ const ContactSection = () => {
               <label className="text-sm font-medium mb-2 block text-foreground">Email</label>
               <input
                 type="email"
-                name="from_email"             // ← must match your EmailJS template variable
+                name="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
@@ -128,7 +128,7 @@ const ContactSection = () => {
             <div>
               <label className="text-sm font-medium mb-2 block text-foreground">Message</label>
               <textarea
-                name="message"               // ← must match your EmailJS template variable
+                name="message"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 rows={5}
