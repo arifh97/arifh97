@@ -68,7 +68,7 @@ const ToolsSection = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: 0.5 + i * 0.15 }}
             >
-              <div className="relative glass rounded-2xl p-6 hover-glow">
+              <div className="relative glass rounded-2xl p-6 hover-glow h-full">
                 <span className="font-heading text-4xl font-bold gradient-text opacity-50">{item.step}</span>
                 <h3 className="font-heading text-lg font-semibold mt-2 mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>

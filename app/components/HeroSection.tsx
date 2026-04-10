@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Social from "./social";
+import { Link } from "react-scroll";
 
 const HeroSection = () => {
   return (
@@ -59,18 +60,20 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
-            <a
-              href="#projects"
+            <Link
+              smooth={true} duration={300} offset={0}
+              to="#projects"
               className="px-8 py-3.5 rounded-xl font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-105 glow-primary"
             >
               View My Work
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              smooth={true} duration={300} offset={0}
+              to="#contact"
               className="px-8 py-3.5 rounded-xl font-semibold glass hover-glow hover:border-primary/50 transition-all duration-300"
             >
               Get In Touch
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
