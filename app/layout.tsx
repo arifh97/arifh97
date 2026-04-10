@@ -16,7 +16,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Md Arif Hossain | Frontend Web Developer",
   description:
-    "Frontend Web Developer specializing in React, Next.js, Vue.js, WordPress and Shopify. Built 250+ responsive, high-performance web applications with a focus on UI/UX, SEO, and Core Web Vitals.",
+    "Frontend Web Developer specializing in React, Next.js, Vue.js. Built 250+ responsive, high-performance web applications with a focus on UI/UX, SEO, and Core Web Vitals.",
   keywords: [
     "Md Arif Hossain",
     "Frontend Developer",
@@ -26,8 +26,6 @@ export const metadata: Metadata = {
     "Web Developer Portfolio",
     "JavaScript Developer",
     "TypeScript Developer",
-    "WordPress Developer",
-    "Shopify Developer",
   ],
   authors: [{ name: "Md Arif Hossain" }],
 };
