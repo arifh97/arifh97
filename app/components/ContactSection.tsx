@@ -15,7 +15,7 @@ type Status = "idle" | "sending" | "success" | "error";
 const ContactSection = () => {
   const ref = useRef(null);
   const formRef = useRef<HTMLFormElement>(null);
-  const [formData, setFormData] = useState({ name: "", email: "", message: "", service: 'Personal' });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "", service: '' });
   const [status, setStatus] = useState<Status>("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -32,7 +32,7 @@ const ContactSection = () => {
         EMAILJS_PUBLIC_KEY
       );
       setStatus("success");
-      setFormData({ name: "", email: "", message: "", service: 'Personal' });
+      setFormData({ name: "", email: "", message: "", service: 'personal' });
     } catch (error) {
       console.error("EmailJS error:", error);
       setStatus("error");
