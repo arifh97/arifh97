@@ -1,19 +1,48 @@
 "use client";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, Mail, MapPin, Phone } from "lucide-react";
+import { Send, Mail, MapPin, Phone, CheckCircle, AlertCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import Social from "./social";
+
+// ✅ Replace these with your actual EmailJS credentials
+const EMAILJS_SERVICE_ID = "service_mw77az1";
+const EMAILJS_TEMPLATE_ID = "template_yu7gdbd";
+const EMAILJS_PUBLIC_KEY = "yEj4uR_S3N6Y2WGKt";
+
+type Status = "idle" | "sending" | "success" | "error";
 
 const ContactSection = () => {
   const ref = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<Status>("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-    setFormData({ name: "", email: "", message: "" });
+    if (!formRef.current) return;
+
+    setStatus("sending");
+
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      );
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
+    } finally {
+      // Reset status after 4 seconds
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
+
+  const isLoading = status === "sending";
 
   return (
     <section id="contact" className="section-padding relative" ref={ref}>
@@ -64,6 +93,7 @@ const ContactSection = () => {
 
           {/* Form */}
           <motion.form
+            ref={formRef}
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -75,6 +105,7 @@ const ContactSection = () => {
               <label className="text-sm font-medium mb-2 block text-foreground">Name</label>
               <input
                 type="text"
+                name="from_name"              // ← must match your EmailJS template variable
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
@@ -86,6 +117,7 @@ const ContactSection = () => {
               <label className="text-sm font-medium mb-2 block text-foreground">Email</label>
               <input
                 type="email"
+                name="from_email"             // ← must match your EmailJS template variable
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
@@ -96,6 +128,7 @@ const ContactSection = () => {
             <div>
               <label className="text-sm font-medium mb-2 block text-foreground">Message</label>
               <textarea
+                name="message"               // ← must match your EmailJS template variable
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 rows={5}
@@ -104,18 +137,44 @@ const ContactSection = () => {
                 required
               />
             </div>
+
+            {/* Status feedback */}
+            {status === "success" && (
+              <div className="flex items-center gap-2 text-green-500 text-sm font-medium">
+                <CheckCircle size={16} />
+                Message sent! I'll get back to you soon.
+              </div>
+            )}
+            {status === "error" && (
+              <div className="flex items-center gap-2 text-red-500 text-sm font-medium">
+                <AlertCircle size={16} />
+                Something went wrong. Please try again.
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full py-3.5 rounded-xl font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2"
+              disabled={isLoading}
+              className="w-full cursor-pointer py-3.5 rounded-xl font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
             >
-              <Send size={18} />
-              Send Message
+              {isLoading ? (
+                <>
+                  <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                  </svg>
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Send size={18} />
+                  Send Message
+                </>
+              )}
             </button>
           </motion.form>
         </div>
       </div>
-
-      {/* Footer */}
     </section>
   );
 };
