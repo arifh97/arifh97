@@ -33,7 +33,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4">
         <a href="#" className="font-heading text-xl font-bold gradient-text">
-          Dev.folio
+          Arif.folio
         </a>
 
         {/* Desktop */}
@@ -56,6 +56,14 @@ const Navbar = () => {
           </Link>
         </div>
 
+
+        <Link
+          to="contact"
+          spy={true} smooth={true} duration={600} offset={0}
+          className="px-4 py-2 cursor-pointer ml-auto mr-2 md:hidden rounded-lg text-sm font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity"
+        >
+          Hire Me
+        </Link>
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -80,7 +88,7 @@ const Navbar = () => {
                   key={link.href}
                   to={link.href} spy={true} smooth={true} duration={600} offset={0}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                  className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -89,7 +97,7 @@ const Navbar = () => {
                 to="contact"
                 spy={true} smooth={true} duration={600} offset={0}
                 onClick={() => setMobileOpen(false)}
-                className="px-5 rounded-lg text-sm font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground text-center"
+                className="px-5 min-h-12 flex items-center justify-center rounded-lg text-lg font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground text-center"
               >
                 Hire Me
               </Link>

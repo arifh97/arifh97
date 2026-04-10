@@ -69,7 +69,7 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="glass rounded-2xl p-8 space-y-5"
+            className="glass rounded-2xl p-4 md:p-8 space-y-5"
           >
             <div>
               <label className="text-sm font-medium mb-2 block text-foreground">Name</label>

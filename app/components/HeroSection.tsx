@@ -7,13 +7,13 @@ import { Link } from "react-scroll";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-padding pt-32">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-padding md:pt-32">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl animate-pulse-glow" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-accent/5 blur-3xl animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-border/20" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-border/10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full border border-border/20" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 rounded-full border border-border/10" />
       </div>
 
       <div className="container mx-auto relative z-10">
@@ -23,7 +23,7 @@ const HeroSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-5 md:mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-sm text-muted-foreground">Available for new projects</span>
@@ -34,7 +34,7 @@ const HeroSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+            className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 md:mb-6"
           >
             Hi, I'm{" "}
             <span className="gradient-text">Md Arif Hossain</span>
@@ -47,7 +47,7 @@ const HeroSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           >
             Crafting high-performance, responsive web applications with modern frameworks.
             Turning complex designs into seamless digital experiences.
@@ -58,18 +58,18 @@ const HeroSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+            className="flex flex-wrap items-center justify-center gap-4 mb-8 md:mb-12 text-sm md:text-base"
           >
             <Link
               smooth={true} duration={300} offset={0}
-              to="#projects"
+              to="projects"
               className="px-8 py-3.5 rounded-xl font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-105 glow-primary"
             >
               View My Work
             </Link>
             <Link
               smooth={true} duration={300} offset={0}
-              to="#contact"
+              to="contact"
               className="px-8 py-3.5 rounded-xl font-semibold glass hover-glow hover:border-primary/50 transition-all duration-300"
             >
               Get In Touch

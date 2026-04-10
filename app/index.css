@@ -98,7 +98,7 @@
   }
 
   .section-padding {
-    @apply py-15 md:py-20 lg:py-25 px-6 md:px-8;
+    @apply py-15 md:py-20 lg:py-25;
   }
 
   .hover-glow {
@@ -107,5 +107,8 @@
   .hover-glow:hover {
     box-shadow: 0 0 30px hsl(var(--glow-primary) / 0.2),
                 0 0 80px hsl(var(--glow-primary) / 0.08);
+  }
+  .container{
+    @apply px-4
   }
 }
