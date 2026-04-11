@@ -6,7 +6,7 @@ import { Briefcase, Award, Users, Zap } from "lucide-react";
 const stats = [
   { icon: Briefcase, value: 250, suffix: "+", label: "Projects Delivered" },
   { icon: Users, value: 180, suffix: "+", label: "Happy Clients" },
-  { icon: Award, value: 5, suffix: "+", label: "Years Experience" },
+  { icon: Award, value: 7, suffix: "+", label: "Years Experience" },
   { icon: Zap, value: 99, suffix: "%", label: "Client Satisfaction" },
 ];
 
