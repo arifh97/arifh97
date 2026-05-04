@@ -1,5 +1,14 @@
 [
     {
+        "img": "/img/vercel/22.png",
+        "title": "casino-6-five",
+        "des": "Complete redesign and of a AI meme landing page",
+        "tags": [
+            "nuxt",
+            "website"
+        ]
+    },
+    {
         "img": "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/6939d093bc36970007e4d45d/screenshot_2025-12-10-19-57-26-0000.webp&fit=cover&h=500&q=40&w=800",
         "title": "paradoxiadev",
         "des": "Complete redesign and of a AI meme landing page",
