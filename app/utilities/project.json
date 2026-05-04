@@ -1,11 +1,39 @@
 [
     {
+        "img": "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/69f62de7e31e9500086e176c/screenshot_2026-05-02-17-01-43-0000.webp&fit=cover&h=500&q=40&w=800",
+        "title": "biaqdev",
+        "des": "Complete redesign and of a AI meme landing page",
+        "tags": [
+            "react",
+            "landingpage",
+            "crypto"
+        ]
+    },
+    {
+        "img": "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/69d6133afa54c6000810fa61/screenshot_2026-04-08-08-35-21-0000.webp&fit=cover&h=500&q=40&w=800",
+        "title": "traviadev",
+        "des": "Complete redesign and of a AI meme landing page",
+        "tags": [
+            "react",
+            "landingpage"
+        ]
+    },
+    {
         "img": "/img/vercel/22.png",
         "title": "casino-6-five",
         "des": "Complete redesign and of a AI meme landing page",
         "tags": [
             "nuxt",
             "website"
+        ]
+    },
+    {
+        "img": "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/69e3def4664afd0008325a0c/screenshot_2026-04-18-19-44-04-0000.webp&fit=cover&h=500&q=40&w=800",
+        "title": "traviadev",
+        "des": "Complete redesign and of a AI meme landing page",
+        "tags": [
+            "react",
+            "landingpage"
         ]
     },
     {
