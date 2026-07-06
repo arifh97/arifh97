@@ -42,7 +42,7 @@ const Navbar = () => {
             <Link
               to={link.href} spy={true} smooth={true} duration={600} offset={0}
               key={link.href}
-              className="text-base cursor-pointer font-medium text-muted-foreground hover:text-primary transition-colors duration-300"
+              className="text-base cursor-pointer font-medium text-gray-300 hover:text-primary transition-colors duration-300"
             >
               {link.label}
             </Link>
