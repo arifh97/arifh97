@@ -1,7 +1,7 @@
 # 👋 Hi, I'm Arif Hossain  
 ### 💻 Web Developer & UI/UX Designer
 
-I'm a passionate Web & App Developer who loves building fast, interactive, and visually appealing digital experiences. I specialize in modern frontend technologies and create custom websites, dashboards, landing pages, and full-stack applications.
+I'm a passionate Web Developer who loves building fast, interactive, and visually appealing digital experiences. I specialize in modern frontend technologies and create custom websites, dashboards, landing pages, and full-stack applications.
 
 ---
 
@@ -21,9 +21,6 @@ I'm a passionate Web & App Developer who loves building fast, interactive, and v
 - Next.js  
 - Vue.js  
 - Nuxt.js  
-
-### **Mobile Development**
-- React Native  
 
 ### **Other Experience**
 - Custom Website Development  
