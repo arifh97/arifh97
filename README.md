@@ -45,7 +45,7 @@ I'm a passionate Web & App Developer who loves building fast, interactive, and v
 
 ## 📫 Contact Me
 - **Email:** arifline16@gmail.com
-- **Portfolio:** [Portfolio]((https://arifh97.vercel.app/))
+- **Portfolio:** [Portfolio](https://arifh97.vercel.app/)
 
 ---
 
