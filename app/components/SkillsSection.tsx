@@ -88,7 +88,7 @@ const SkillsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="common-title"
         >
           <span className="text-sm font-semibold text-primary tracking-widest uppercase">Skills</span>
           <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3">
@@ -107,14 +107,14 @@ const SkillsSection = () => {
               className="glass rounded-2xl p-4 md:p-6 transition-none!"
             >
               <h3 className="font-heading text-xl font-semibold mb-8 text-white/80">{category.title}</h3>
-              <div className="flex flex-wrap gap-x-4 gap-y-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-x-4 gap-y-8">
                 {category.skills.map((skill) => {
                   const Icon = skill.icon;
                   return (
                     <div key={skill.name} className="flex items-center gap-2 bg-white/10 px-3 py-2.5 rounded-lg relative z-1 rounded-tr-none">
-                      <span className="absolute rounded-t-lg bottom-full right-0 size-4 font-medium text-[11px] w-max py-1 px-2 h-auto bg-white/10 text-accent">{skill.level}%</span>
+                      <span className="absolute rounded-t-lg right-0 bottom-full size-4 font-medium text-[11px] w-max py-1 px-2 h-auto bg-white/10 text-accent">{skill.level}%</span>
                       <Icon size={18} color={skill.color} />
-                      <span className="text-card-foreground text-sm">{skill.name}</span>
+                      <span className="text-card-foreground text-sm line-clamp-1">{skill.name}</span>
                     </div>
                   );
                 })}

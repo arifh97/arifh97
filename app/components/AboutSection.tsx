@@ -45,7 +45,7 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="common-title"
         >
           <span className="text-sm font-semibold text-primary tracking-widest uppercase">About Me</span>
           <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3">

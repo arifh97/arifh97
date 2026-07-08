@@ -61,7 +61,7 @@ const Navbar = () => {
         <ScrollLink
           to="contact"
           spy={true} smooth={true} duration={600} offset={0}
-          className="btn min-h-12 px-4 py-2 cursor-pointer ml-auto mr-2 md:hidden"
+          className="btn min-h-10! md:min-h-12! px-4 cursor-pointer ml-auto mr-2 md:hidden"
         >
           Hire Me
         </ScrollLink>
