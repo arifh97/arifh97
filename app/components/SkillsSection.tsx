@@ -61,7 +61,7 @@ const SkillBar = ({ name, level, delay }: { name: string; level: number; delay: 
           initial={{ width: 0 }}
           animate={inView ? { width: `${level}%` } : { width: 0 }}
           transition={{ duration: 1, delay, ease: "easeOut" }}
-          className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
+          className="h-full rounded-full bg-linear-90 from-primary to-accent"
         />
       </div>
     </div>
@@ -76,27 +76,29 @@ const SkillsSection = () => {
     <section id="skills" className="section-padding relative" ref={ref}>
       <div className="container mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-primary tracking-widest uppercase">Skills</span>
+          <span className="text-sm font-semibold text-accent tracking-widest uppercase">Skills</span>
           <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3">
             My <span className="gradient-text">Expertise</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {skillCategories.map((category, catIdx) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: catIdx * 0.15 }}
-              className="glass rounded-2xl p-6 md:p-8 hover-glow"
+              className="rounded-2xl p-4 md:p-6 bg-card"
             >
-              <h3 className="font-heading text-lg font-semibold mb-6 gradient-text">{category.title}</h3>
+              <h3 className="font-heading text-2xl font-semibold mb-6 gradient-text">{category.title}</h3>
               {category.skills.map((skill, i) => (
                 <SkillBar key={skill.name} {...skill} delay={0.3 + i * 0.1} />
               ))}

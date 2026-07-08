@@ -25,7 +25,7 @@ const HeroSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-5 md:mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-5 md:mb-8 bg-card/20"
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-sm text-gray-300">Available for new projects</span>
@@ -41,7 +41,7 @@ const HeroSection = () => {
               Hi, I&#39;m
               <span className="gradient-text"> Md Arif Hossain</span>
               <br />
-              <span className="text-foreground">Frontend Developer</span>
+              <span className="">Frontend Developer</span>
             </motion.h1>
 
             <motion.p
@@ -65,14 +65,14 @@ const HeroSection = () => {
               <Link
                 smooth={true} duration={300} offset={0}
                 to="projects"
-                className="px-8 py-3.5 rounded-xl font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-105 glow-primary"
+                className="px-8 btn w-max"
               >
                 View My Work
               </Link>
               <Link
                 smooth={true} duration={300} offset={0}
                 to="contact"
-                className="px-8 py-3.5 rounded-xl font-semibold glass hover-glow hover:border-primary/50 transition-all duration-300"
+                className="px-8 btn w-max bg-card/20 backdrop-blur-2xl hover:bg-primary/90"
               >
                 Get In Touch
               </Link>
@@ -125,6 +125,7 @@ const HeroSection = () => {
           mouseInteraction
           mouseStrength={0.5}
           mouseRadius={1}
+          mixBlendMode="multiply"
         />
       </section>
     </>

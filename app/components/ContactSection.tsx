@@ -54,7 +54,7 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-primary tracking-widest uppercase">Contact</span>
+          <span className="text-sm font-semibold text-accent tracking-widest uppercase">Contact</span>
           <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3">
             Let's <span className="gradient-text">Connect</span>
           </h2>

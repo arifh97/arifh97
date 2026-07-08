@@ -18,7 +18,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 900);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -29,7 +29,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass-strong shadow-lg" : "bg-transparent"}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-card/50 backdrop-blur-2xl" : "bg-transparent"}`}
     >
       <div className="container mx-auto flex items-center justify-between py-4">
         <a href="#" className="font-heading text-xl font-bold gradient-text">
@@ -42,7 +42,7 @@ const Navbar = () => {
             <Link
               to={link.href} spy={true} smooth={true} duration={600} offset={0}
               key={link.href}
-              className="text-base cursor-pointer font-medium text-gray-300 hover:text-primary transition-colors duration-300"
+              className={`text-base cursor-pointer font-medium text-gray-300 hover:text-primary transition-colors duration-300 ${scrolled ? "text-heading/80" : "text-gray-300"}`}
             >
               {link.label}
             </Link>
@@ -50,7 +50,7 @@ const Navbar = () => {
           <Link
             to="contact"
             spy={true} smooth={true} duration={600} offset={0}
-            className="px-6 py-3 cursor-pointer rounded-lg text-base font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity"
+            className="btn min-h-12 px-5"
           >
             Hire Me
           </Link>
@@ -60,7 +60,7 @@ const Navbar = () => {
         <Link
           to="contact"
           spy={true} smooth={true} duration={600} offset={0}
-          className="px-4 py-2 cursor-pointer ml-auto mr-2 md:hidden rounded-lg text-sm font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity"
+          className="btn md:hidden"
         >
           Hire Me
         </Link>
@@ -88,7 +88,7 @@ const Navbar = () => {
                   key={link.href}
                   to={link.href} spy={true} smooth={true} duration={600} offset={0}
                   onClick={() => setMobileOpen(false)}
-                  className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
+                  className={`text-base font-medium ${scrolled ? "text-heading/80" : "text-gray-300"} hover:text-primary transition-colors`}
                 >
                   {link.label}
                 </Link>

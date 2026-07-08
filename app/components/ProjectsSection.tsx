@@ -20,13 +20,13 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-primary tracking-widest uppercase">Portfolio</span>
+          <span className="text-sm font-semibold text-accent tracking-widest uppercase">Portfolio</span>
           <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3">
             Featured <span className="gradient-text">Projects</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.slice(0, 12).map((item, index) => (
             <ProjectCard
               key={index}
@@ -37,7 +37,7 @@ const ProjectsSection = () => {
           ))}
         </div>
         <div className="flex items-center justify-center mt-6 md:mt-10 lg:mt-14">
-          <Link className="px-8 py-3.5 rounded-xl font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-105 " href="/projects">
+          <Link className="px-8 btn w-max " href="/projects">
             View All Projects
           </Link>
         </div>

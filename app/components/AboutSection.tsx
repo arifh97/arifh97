@@ -2,6 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Briefcase, Award, Users, Zap } from "lucide-react";
+import { Link } from "react-scroll";
 
 const stats = [
   { icon: Briefcase, value: 250, suffix: "+", label: "Projects Delivered" },
@@ -46,7 +47,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-primary tracking-widest uppercase">About Me</span>
+          <span className="text-sm font-semibold text-accent tracking-widest uppercase">About Me</span>
           <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3">
             Passionate About <span className="gradient-text">Building</span>
           </h2>
@@ -69,12 +70,11 @@ const AboutSection = () => {
               while optimizing for speed, SEO, and exceptional user experience. I bridge the gap
               between design and development with pixel-perfect precision.
             </p>
-            <a
-              href="#contact"
-              className="inline-flex px-6 py-3 rounded-xl font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-105"
+            <Link to="contact" spy={true} smooth={true} duration={600} offset={0}
+              className="px-6 btn w-max"
             >
-              Let's Work Together
-            </a>
+              Let&apos;s Work Together
+            </Link>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-4">

@@ -33,7 +33,7 @@ const ToolsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-primary tracking-widest uppercase">Workflow</span>
+          <span className="text-sm font-semibold text-accent tracking-widest uppercase">Workflow</span>
           <h2 className="font-heading text-4xl md:text-5xl font-bold mt-3">
             Tools & <span className="gradient-text">Process</span>
           </h2>
