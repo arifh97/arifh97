@@ -2,82 +2,91 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { IconType } from "react-icons";
+import {
+  SiHtml5,
+  SiCss,
+  SiSass,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiVuedotjs,
+  SiNuxt,
+  SiRedux,
+  SiPinia,
+  SiJquery,
+  SiTailwindcss,
+  SiBootstrap,
+  SiMui,
+  SiFramer,
+} from "react-icons/si";
+import { Zap, Search, Globe } from "lucide-react";
 
-const skillCategories = [
+type Skill = {
+  name: string;
+  icon: IconType | React.ElementType;
+  color: string;
+  level?: number;
+};
+
+type SkillCategory = {
+  title: string;
+  skills: Skill[];
+};
+
+const skillCategories: SkillCategory[] = [
   {
     title: "Languages",
     skills: [
-      { name: "HTML5", level: 98 },
-      { name: "CSS3", level: 95 },
-      { name: "Sass", level: 90 },
-      { name: "JavaScript (ES6+)", level: 95 },
-      { name: "TypeScript", level: 90 },
+      { name: "HTML5", icon: SiHtml5, color: "#E34F26", level: 100 },
+      { name: "CSS3", icon: SiCss, color: "#1572B6", level: 100 },
+      { name: "Sass", icon: SiSass, color: "#CC6699", level: 100 },
+      { name: "JavaScript (ES6+)", icon: SiJavascript, color: "#F7DF1E", level: 90 },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6", level: 80 },
     ],
   },
   {
     title: "Frameworks & Libraries",
     skills: [
-      { name: "ReactJS", level: 95 },
-      { name: "NextJS", level: 90 },
-      { name: "VueJS", level: 85 },
-      { name: "NuxtJS", level: 88 },
-      { name: "Redux", level: 88 },
-      { name: "Pinia", level: 82 },
-      { name: "jQuery", level: 90 },
+      { name: "ReactJS", icon: SiReact, color: "#61DAFB", level: 90, },
+      { name: "NextJS", icon: SiNextdotjs, color: "#fff", level: 90, },
+      { name: "VueJS", icon: SiVuedotjs, color: "#4FC08D", level: 90, },
+      { name: "NuxtJS", icon: SiNuxt, color: "#00DC82", level: 90, },
+      { name: "Redux", icon: SiRedux, color: "#764ABC", level: 80, },
+      { name: "Pinia", icon: SiPinia, color: "#FFD859", level: 80, },
+      { name: "jQuery", icon: SiJquery, color: "#0769AD", level: 95, },
     ],
   },
   {
     title: "Styling & UI",
     skills: [
-      { name: "Tailwind CSS", level: 96 },
-      { name: "Bootstrap", level: 92 },
-      { name: "Material UI", level: 88 },
-      { name: "Sass/SCSS", level: 90 },
-      { name: "Framer Motion", level: 85 },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4", level: 100 },
+      { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3", level: 100 },
+      { name: "Material UI", icon: SiMui, color: "#007FFF", level: 100 },
+      { name: "Sass/SCSS", icon: SiSass, color: "#CC6699", level: 100 },
+      { name: "Framer Motion", icon: SiFramer, color: "#0055FF", level: 90 },
     ],
   },
   {
     title: "Optimization",
     skills: [
-      { name: "Core Web Vitals", level: 92 },
-      { name: "SEO Best Practices", level: 90 },
-      { name: "Cross-browser", level: 95 },
+      { name: "Core Web Vitals", icon: Zap, color: "#F59E0B", level: 100 },
+      { name: "SEO Best Practices", icon: Search, color: "#22C55E", level: 100 },
+      { name: "Cross-browser", icon: Globe, color: "#38BDF8", level: 100 },
     ],
   },
 ];
 
-const SkillBar = ({ name, level, delay }: { name: string; level: number; delay: number }) => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
-
-  return (
-    <div ref={ref} className="mb-3">
-      <div className="flex justify-between mb-1.5">
-        <span className="text-sm font-medium text-foreground">{name}</span>
-        <span className="text-sm text-primary font-semibold">{level}%</span>
-      </div>
-      <div className="h-2 rounded-full bg-secondary overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={inView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 1, delay, ease: "easeOut" }}
-          className="h-full rounded-full bg-linear-90 from-primary to-accent"
-        />
-      </div>
-    </div>
-  );
-};
 
 const SkillsSection = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="skills" className="section-padding relative" ref={ref}>
+    <section id="skills" className="section-padding relative">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
@@ -92,14 +101,24 @@ const SkillsSection = () => {
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: catIdx * 0.15 }}
               className="glass rounded-2xl p-4 md:p-6 transition-none!"
             >
-              <h3 className="font-heading text-xl font-semibold mb-4 text-white/80">{category.title}</h3>
-              {category.skills.map((skill, i) => (
-                <SkillBar key={skill.name} {...skill} delay={0.3 + i * 0.1} />
-              ))}
+              <h3 className="font-heading text-xl font-semibold mb-8 text-white/80">{category.title}</h3>
+              <div className="flex flex-wrap gap-x-4 gap-y-8">
+                {category.skills.map((skill) => {
+                  const Icon = skill.icon;
+                  return (
+                    <div key={skill.name} className="flex items-center gap-2 bg-white/10 px-3 py-2.5 rounded-lg relative z-1 rounded-tr-none">
+                      <span className="absolute rounded-t-lg bottom-full right-0 size-4 font-medium text-[11px] w-max py-1 px-2 h-auto bg-white/10 text-accent">{skill.level}%</span>
+                      <Icon size={18} color={skill.color} />
+                      <span className="text-card-foreground text-sm">{skill.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </motion.div>
           ))}
         </div>
