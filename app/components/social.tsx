@@ -13,7 +13,7 @@ export default function Social({ className }: { className?: string }) {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-xl glass text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-300 hover:scale-110"
+                    className="p-3 rounded-xl bg-white/15 backdrop-blur-2xl hover:bg-accent transition-all duration-300 hover:-translate-y-1"
                 >
                     <Icon size={20} />
                 </a>

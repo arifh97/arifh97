@@ -48,8 +48,9 @@ const ToolsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.2 }}
+              className="h-full"
             >
-              <div className="glass rounded-2xl p-5 text-center hover-glow hover:border-primary/30 group transition-all duration-300">
+              <div className="glass h-full rounded-2xl p-5 text-center hover-glow hover:border-primary/30 group transition-all duration-300">
                 <Icon className="mx-auto mb-3 text-muted-foreground group-hover:text-primary transition-colors" size={28} />
                 <div className="text-sm font-semibold mb-1">{name}</div>
                 <div className="text-xs text-muted-foreground">{desc}</div>

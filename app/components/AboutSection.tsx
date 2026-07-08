@@ -2,6 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Briefcase, Award, Users, Zap } from "lucide-react";
+import { Link } from "react-scroll";
 
 const stats = [
   { icon: Briefcase, value: 250, suffix: "+", label: "Projects Delivered" },
@@ -58,23 +59,11 @@ const AboutSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              A highly skilled Frontend Web Developer with experience delivering{" "}
-              <span className="text-foreground font-semibold">250+ client projects</span> across
-              diverse industries. Specialized in building responsive, high-performance applications
-              using ReactJS, NextJS, and VueJS.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Strong ability to translate complex UI/UX designs into clean, maintainable code
-              while optimizing for speed, SEO, and exceptional user experience. I bridge the gap
-              between design and development with pixel-perfect precision.
-            </p>
-            <a
-              href="#contact"
-              className="inline-flex px-6 py-3 rounded-xl font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-105"
-            >
-              Let's Work Together
-            </a>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">A highly skilled Frontend Web Developer with experience delivering <span className="text-foreground font-semibold">250+ client projects</span> across diverse industries. Specialized in building responsive, high-performance applications using ReactJS, NextJS, and VueJS.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">Strong ability to translate complex UI/UX designs into clean, maintainable code between design and development with pixel-perfect precision.</p>
+            <Link spy={true} smooth={true} duration={600} offset={0} to="contact" className="btn w-max">
+              Let&apos;s Work Together
+            </Link>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-4">
@@ -88,7 +77,7 @@ const AboutSection = () => {
                 className=""
               >
                 <div className="glass rounded-2xl p-6 text-center hover-glow hover:border-primary/30 transition-all duration-300">
-                  <Icon className="mx-auto mb-3 text-primary" size={28} />
+                  <Icon className="mx-auto mb-3 text-white" size={28} />
                   <div className="font-heading text-3xl font-bold gradient-text">
                     <CountUp target={value} suffix={suffix} inView={inView} />
                   </div>

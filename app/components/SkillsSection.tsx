@@ -51,7 +51,7 @@ const SkillBar = ({ name, level, delay }: { name: string; level: number; delay: 
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <div ref={ref} className="mb-4">
+    <div ref={ref} className="mb-3">
       <div className="flex justify-between mb-1.5">
         <span className="text-sm font-medium text-foreground">{name}</span>
         <span className="text-sm text-primary font-semibold">{level}%</span>
@@ -61,7 +61,7 @@ const SkillBar = ({ name, level, delay }: { name: string; level: number; delay: 
           initial={{ width: 0 }}
           animate={inView ? { width: `${level}%` } : { width: 0 }}
           transition={{ duration: 1, delay, ease: "easeOut" }}
-          className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
+          className="h-full rounded-full bg-linear-90 from-primary to-accent"
         />
       </div>
     </div>
@@ -87,16 +87,16 @@ const SkillsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {skillCategories.map((category, catIdx) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: catIdx * 0.15 }}
-              className="glass rounded-2xl p-6 md:p-8 hover-glow"
+              className="glass rounded-2xl p-4 md:p-6 transition-none!"
             >
-              <h3 className="font-heading text-lg font-semibold mb-6 gradient-text">{category.title}</h3>
+              <h3 className="font-heading text-xl font-semibold mb-4 text-white/80">{category.title}</h3>
               {category.skills.map((skill, i) => (
                 <SkillBar key={skill.name} {...skill} delay={0.3 + i * 0.1} />
               ))}

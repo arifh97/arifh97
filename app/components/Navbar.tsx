@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link } from 'react-scroll'
+import { Link as ScrollLink } from 'react-scroll';
+import Link from 'next/link';
 
 const navLinks = [
   { label: "About", href: "about" },
@@ -32,38 +33,38 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass-strong shadow-lg" : "bg-transparent"}`}
     >
       <div className="container mx-auto flex items-center justify-between py-4">
-        <a href="#" className="font-heading text-xl font-bold gradient-text">
+        <Link href="/" className="font-heading text-xl font-bold logo-gradient">
           Arif.folio
-        </a>
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
+            <ScrollLink
               to={link.href} spy={true} smooth={true} duration={600} offset={0}
               key={link.href}
               className="text-base cursor-pointer font-medium text-gray-300 hover:text-primary transition-colors duration-300"
             >
               {link.label}
-            </Link>
+            </ScrollLink>
           ))}
-          <Link
+          <ScrollLink
             to="contact"
             spy={true} smooth={true} duration={600} offset={0}
-            className="px-6 py-3 cursor-pointer rounded-lg text-base font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity"
+            className="btn min-h-12 px-6"
           >
             Hire Me
-          </Link>
+          </ScrollLink>
         </div>
 
 
-        <Link
+        <ScrollLink
           to="contact"
           spy={true} smooth={true} duration={600} offset={0}
-          className="px-4 py-2 cursor-pointer ml-auto mr-2 md:hidden rounded-lg text-sm font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity"
+          className="btn min-h-12 px-4 py-2 cursor-pointer ml-auto mr-2 md:hidden"
         >
           Hire Me
-        </Link>
+        </ScrollLink>
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -84,23 +85,23 @@ const Navbar = () => {
           >
             <div className="container mx-auto py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <Link
+                <ScrollLink
                   key={link.href}
                   to={link.href} spy={true} smooth={true} duration={600} offset={0}
                   onClick={() => setMobileOpen(false)}
                   className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
                 >
                   {link.label}
-                </Link>
+                </ScrollLink>
               ))}
-              <Link
+              <ScrollLink
                 to="contact"
                 spy={true} smooth={true} duration={600} offset={0}
                 onClick={() => setMobileOpen(false)}
                 className="px-5 min-h-12 flex items-center justify-center rounded-lg text-lg font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground text-center"
               >
                 Hire Me
-              </Link>
+              </ScrollLink>
             </div>
           </motion.div>
         )}

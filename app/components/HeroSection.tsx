@@ -65,14 +65,14 @@ const HeroSection = () => {
               <Link
                 smooth={true} duration={300} offset={0}
                 to="projects"
-                className="px-8 py-3.5 rounded-xl font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-105 glow-primary"
+                className="btn"
               >
                 View My Work
               </Link>
               <Link
                 smooth={true} duration={300} offset={0}
                 to="contact"
-                className="px-8 py-3.5 rounded-xl font-semibold glass hover-glow hover:border-primary/50 transition-all duration-300"
+                className="btn bg-white/20! bg-none! text-white hover:bg-accent!"
               >
                 Get In Touch
               </Link>

@@ -70,7 +70,7 @@ const ContactSection = () => {
           >
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Have a project in mind or want to collaborate? I'd love to hear from you.
-              Let's build something amazing together.
+              Let&apos;s build something amazing together.
             </p>
 
             <div className="space-y-5 mb-10">
@@ -142,7 +142,7 @@ const ContactSection = () => {
             {status === "success" && (
               <div className="flex items-center gap-2 text-green-500 text-sm font-medium">
                 <CheckCircle size={16} />
-                Message sent! I'll get back to you soon.
+                Message sent! I&apos; ll get back to you soon.
               </div>
             )}
             {status === "error" && (
@@ -155,7 +155,7 @@ const ContactSection = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full cursor-pointer py-3.5 rounded-xl font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
+              className="btn w-full gap-x-3"
             >
               {isLoading ? (
                 <>

@@ -26,7 +26,7 @@ const ProjectsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.slice(0, 12).map((item, index) => (
             <ProjectCard
               key={index}
@@ -37,7 +37,7 @@ const ProjectsSection = () => {
           ))}
         </div>
         <div className="flex items-center justify-center mt-6 md:mt-10 lg:mt-14">
-          <Link className="px-8 py-3.5 rounded-xl font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-105 " href="/projects">
+          <Link className="btn" href="/projects">
             View All Projects
           </Link>
         </div>
