@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { IconType } from "react-icons";
 import {
   SiHtml5,
@@ -20,8 +19,22 @@ import {
   SiBootstrap,
   SiMui,
   SiFramer,
+  SiShadcnui,
+  SiGreensock,
 } from "react-icons/si";
-import { Zap, Search, Globe } from "lucide-react";
+
+import {
+  Zap,
+  Search,
+  Globe,
+  Hourglass,
+  GitBranch,
+  Image,
+  PackageSearch,
+  Database,
+  Accessibility,
+  Smartphone,
+} from "lucide-react";
 
 type Skill = {
   name: string;
@@ -66,6 +79,9 @@ const skillCategories: SkillCategory[] = [
       { name: "Material UI", icon: SiMui, color: "#007FFF", level: 100 },
       { name: "Sass/SCSS", icon: SiSass, color: "#CC6699", level: 100 },
       { name: "Framer Motion", icon: SiFramer, color: "#0055FF", level: 90 },
+      { name: "shadcn/ui", icon: SiShadcnui, color: "#000000", level: 95 },
+      { name: "GSAP", icon: SiGreensock, color: "#88CE02", level: 85 },
+      { name: "React Bits", icon: SiReact, color: "#61DAFB", level: 85 },
     ],
   },
   {
@@ -74,6 +90,13 @@ const skillCategories: SkillCategory[] = [
       { name: "Core Web Vitals", icon: Zap, color: "#F59E0B", level: 100 },
       { name: "SEO Best Practices", icon: Search, color: "#22C55E", level: 100 },
       { name: "Cross-browser", icon: Globe, color: "#38BDF8", level: 100 },
+      { name: "Lazy Loading", icon: Hourglass, color: "#8B5CF6", level: 95 },
+      { name: "Code Splitting", icon: GitBranch, color: "#EC4899", level: 90 },
+      { name: "Image Optimization", icon: Image, color: "#14B8A6", level: 95 },
+      // { name: "Bundle Analysis", icon: PackageSearch, color: "#F97316", level: 85 },
+      { name: "Caching Strategies", icon: Database, color: "#6366F1", level: 85 },
+      // { name: "Accessibility (a11y)", icon: Accessibility, color: "#10B981", level: 90 },
+      { name: "Responsive Design", icon: Smartphone, color: "#0EA5E9", level: 100 },
     ],
   },
 ];

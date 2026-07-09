@@ -19,7 +19,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 150);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -30,7 +30,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass-strong shadow-lg" : "bg-transparent"}`}
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-solid transition-all duration-500 ${scrolled ? "backdrop-blur-xl shadow-lg" : "bg-transparent border-transparent"}`}
     >
       <div className="container mx-auto flex items-center justify-between py-4">
         <Link href="/" className="font-heading text-xl font-bold logo-gradient">
