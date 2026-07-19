@@ -5,7 +5,7 @@ import { Briefcase, Award, Users, Zap } from "lucide-react";
 import { Link } from "react-scroll";
 
 const stats = [
-  { icon: Briefcase, value: 250, suffix: "+", label: "Projects Delivered" },
+  { icon: Briefcase, value: 230, suffix: "+", label: "Projects Delivered" },
   { icon: Users, value: 180, suffix: "+", label: "Happy Clients" },
   { icon: Award, value: 7, suffix: "+", label: "Years Experience" },
   { icon: Zap, value: 99, suffix: "%", label: "Client Satisfaction" },
