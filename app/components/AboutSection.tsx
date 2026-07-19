@@ -59,7 +59,7 @@ const AboutSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">A highly skilled Frontend Web Developer with experience delivering <span className="text-foreground font-semibold">250+ client projects</span> across diverse industries. Specialized in building responsive, high-performance applications using ReactJS, NextJS, and VueJS.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">A highly skilled Frontend Web Developer with experience delivering <span className="text-foreground font-semibold">350+ client projects</span> across diverse industries. Specialized in building responsive, high-performance applications using ReactJS, NextJS, and VueJS.</p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">Strong ability to translate complex UI/UX designs into clean, maintainable code between design and development with pixel-perfect precision.</p>
             <Link spy={true} smooth={true} duration={600} offset={0} to="contact" className="btn w-max">
               Let&apos;s Work Together
