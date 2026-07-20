@@ -100,7 +100,7 @@ const Navbar = () => {
                 onClick={() => setMobileOpen(false)}
                 className="px-5 min-h-12 flex items-center justify-center rounded-lg text-lg font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground text-center"
               >
-                Hire Me
+              Contact
               </ScrollLink>
             </div>
           </motion.div>
