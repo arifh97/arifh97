@@ -53,7 +53,7 @@ const Navbar = () => {
             spy={true} smooth={true} duration={600} offset={0}
             className="btn min-h-12 px-6"
           >
-            Hire Me
+            Contact
           </ScrollLink>
         </div>
 
@@ -63,7 +63,7 @@ const Navbar = () => {
           spy={true} smooth={true} duration={600} offset={0}
           className="btn min-h-10! md:min-h-12! px-4 cursor-pointer ml-auto mr-2 md:hidden"
         >
-          Hire Me
+          Contact
         </ScrollLink>
         {/* Mobile toggle */}
         <button
@@ -100,7 +100,7 @@ const Navbar = () => {
                 onClick={() => setMobileOpen(false)}
                 className="px-5 min-h-12 flex items-center justify-center rounded-lg text-lg font-semibold bg-linear-to-r from-primary to-accent text-primary-foreground text-center"
               >
-              Contact
+                Contact
               </ScrollLink>
             </div>
           </motion.div>
