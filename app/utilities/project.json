@@ -1,4 +1,13 @@
 [{
+        "img": "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/6a738a9a7acbba0008cd424f/screenshot_2026-08-05-19-10-37-0000.webp&fit=cover&h=500&q=40&w=800",
+        "title": "aradi",
+        "des": "Complete redesign and of a AI meme landing page",
+        "tags": [
+            "react",
+            "landingpage"
+        ]
+    },
+    {
         "img": "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/6a6e4709a81363000803dfe7/screenshot_2026-08-01-19-21-04-0000.webp&fit=cover&h=500&q=40&w=800",
         "title": "merket-master-funding",
         "des": "Complete redesign and of a AI meme landing page",
