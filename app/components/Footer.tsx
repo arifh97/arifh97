@@ -13,7 +13,7 @@ export default function Footer() {
         },
         {
             name: 'Telegram',
-            path: 'https://t.me/arifh97',
+            path: 'https://t.me/arifh997',
             icon: <FaTelegramPlane />
         },
     ]
