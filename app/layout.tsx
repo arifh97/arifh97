@@ -18,7 +18,16 @@ export const metadata: Metadata = {
   description:
     "Frontend Web Developer specializing in React, Next.js, Vue.js. Built 250+ responsive, high-performance web applications with a focus on UI/UX, SEO, and Core Web Vitals.",
   keywords: [
-    "Md Arif Hossain",
+    "html",
+    "css",
+    "mobile responsive",
+    "sass",
+    "scss",
+    "react",
+    "next",
+    "vue",
+    "nuxt",
+    "UI/UX Designer",
     "Frontend Developer",
     "React Developer",
     "Next.js Developer",
@@ -28,6 +37,11 @@ export const metadata: Metadata = {
     "TypeScript Developer",
   ],
   authors: [{ name: "Md Arif Hossain" }],
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
